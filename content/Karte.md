@@ -38,7 +38,11 @@ Um diese Karte zu generieren verwenden wir unter anderem die folgenden Datenquel
         let street = record['addr:street'];
         let housenumber = record['addr:housenumber'];
         let address1 = street ? (housenumber ? `${street} ${housenumber}` : street) : "<i>Genaue Adresse unbekannt</i>";
-        marker.bindPopup(`<b>${record.name}</b><br>${address1}<br>${record.city}`).openPopup();
+        let tel_nr = "0611 505 92 888";
+        let tel = `<b>Telefon</b>: <a href=\"tel:${tel_nr.replace(' ','')}\">${tel_nr}</a>`;
+        let website_url = "http://impfterminservice.hessen.de/";
+        let website = `<b>Website</b>: <a href=\"${website_url}\">${website_url}</a>`;
+        marker.bindPopup(`<b>${record.name}</b><br>${address1}<br>${record.city}<br><br>${website}<br>${tel}`);
         }
     });
 </script>
