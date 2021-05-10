@@ -1,0 +1,45 @@
+{% extends "juice/templates/index.html" %}
+{% block hero %}
+<section class="text-center">
+    <h1 class="heading-text" style="font-size: 50px">
+        Wir wollen Impfangebote sichtbar machen!
+    </h1>
+    <h3 class="title-text">
+        <b>ImpftHessen</b> ist eine Projekt von Freiwilligen, alle Impfangebote in Hessen
+        zu sammeln und einfach auffindbar zu machen.
+    </h3>
+</section>
+<img class="hero-image" style="width: 50%" src="{{ get_url(path="Hessen.svg") }}">
+
+<div class="explore-more text" onclick="document.getElementById('übersicht').scrollIntoView({behavior: 'smooth'})">
+    Wie funktioniert das? ⇩
+</div>
+<style>
+    .hero section {
+        padding: 0 5rem;
+    }
+
+    @media screen and (max-width: 768px) {
+        .hero section {
+            padding: 0 2rem;
+        }
+
+        .hero-image {
+            display: none
+        }
+    }
+</style>
+{% endblock hero %}
+
+{% block content %}
+<div id="übersicht" class="heading-text">Übersicht</div>
+{{ section.content | safe }}
+{% endblock content %}
+
+{% block footer %}
+<footer>
+    <small class="subtext">
+        <a href="https://impft-hessen.de/über-uns">ImpftHessen!</a> © 2021
+    </small>
+</footer>
+{% endblock footer %}
