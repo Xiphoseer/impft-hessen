@@ -1,0 +1,35 @@
+// Script to fetch all vaccination sites from open street map
+// Make sure to include a reference to https://www.openstreetmap.org/copyright wherever you use this data
+// Try this out at https://overpass-turbo.eu/
+
+// Define fields for csv output
+[timeout:100][out:csv(name,lat,lon,
+    "addr:street", "addr:housenumber", postal_code, region;
+    true; ",")];
+
+// Lookup "Hessen"
+area["de:regionalschluessel"="06"]->.state;
+
+// Collect all Vaccination Center Nodes
+( node(area.state)
+ [healthcare]
+ [healthcare~"^(centre|vaccination_centre)$"]
+ (if: t["healthcare"] == "vaccination_centre"
+  || t["healthcare:speciality"] == "vaccination");
+);
+
+foreach->.site(
+  .site is_in->.a;
+  area.a[boundary=postal_code]->.plz;
+  //area.a[admin_level~"8"]->.city;
+  area.a[admin_level~"6"]->.region;
+
+  .site;
+  convert node ::=::,
+               ::id = _.u(id()),
+               lat = _.u(lat()),
+               lon = _.u(lon()),
+               postal_code = plz.u(t["note"]),
+               region = region.u(t["name"]);
+  out;
+);
