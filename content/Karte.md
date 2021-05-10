@@ -6,6 +6,8 @@ weight = 1
 
 # Karte
 
+Auf dieser Karte werde die Standorte der Impfstellen angezeigt.
+
 <div id="map"></div>
 <!--<p><a href="https://www.maptiler.com/copyright/" target="_blank">© MapTiler</a>
 <a href="https://www.openstreetmap.org/copyright" target="_blank">© OpenStreetMap contributors</a></p>-->
