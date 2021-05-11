@@ -31,7 +31,7 @@ Um diese Karte zu generieren verwenden wir unter anderem die folgenden Datenquel
 
     const i_phone = "<i class=\"fas fa-phone\"></i>";
     function phone_link(tel) {
-        return `<a href="tel:${tel.replace(' ', '')}">${tel}</a>`;
+        return `<a href="tel:${tel.replaceAll(' ', '')}">${tel}</a>`;
     }
     function phone(tel) {
         return i_phone + " " + phone_link(tel);
