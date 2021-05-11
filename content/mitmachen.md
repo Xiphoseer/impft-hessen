@@ -39,3 +39,5 @@ und regelmäßig auf diese Seite überspielt.
     - wann ungefähr ist der nächste freie Termin?
     - für welche Altersgruppen?
     - nur für Stammpatienten?
+- Woher kommen diese Daten
+    - Telefonat, Webseite, Datum
