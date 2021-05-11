@@ -15,12 +15,13 @@ Auf dieser Karte werde die Standorte der Impfstellen angezeigt.
 
 Um diese Karte zu generieren verwenden wir unter anderem die folgenden Datenquellen
 
-## Staatliche Impfzentren:
+## Staatliche Impfzentren
 
 - OSM – <a href="https://www.openstreetmap.org/copyright" target="_blank">© OpenStreetMap contributors</a>
+- Land Hessen: <https://corona-impfung.hessen.de/für-bürger/die-impfzentren>
 
 <script>
-    var map = L.map('map').setView([50.540,9.5], 7);
+    var map = L.map('map').setView([50.540,9], 7);
     var gl = L.mapboxGL({
     attribution: "\u003ca href=\"https://www.maptiler.com/copyright/\" target=\"_blank\"\u003e\u0026copy; MapTiler\u003c/a\u003e \u003ca href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\"\u003e\u0026copy; OpenStreetMap contributors\u003c/a\u003e",
     style: 'https://api.maptiler.com/maps/339b74e3-736a-4a41-94e3-bafcc9dcffb7/style.json?key=g4rPvq9AptKIXPP2JxyE'
