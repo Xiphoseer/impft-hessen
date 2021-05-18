@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ImpftHessen!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <style>
+    :root {
+        /* Primary theme color */
+        --primary-color: lightblue;
+        /* Primary theme text color */
+        --primary-text-color: #543631;
+        /* Primary theme link color */
+        --primary-link-color: blue;
+        /* Secondary color: the background body color */
+        --secondary-color: #fcfaf6;
+        --secondary-text-color: #303030;
+        /* Highlight text color of table of content */
+        --toc-highlight-text-color: blue;
+    }
+</style>
+
+    <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/normalize.css">
+    <link rel="stylesheet" href="https:&#x2F;&#x2F;impft-hessen.de&#x2F;juice.css">
+    
+    
+</head>
+
+<body>
+    
+
+    <header class="pos-absolute" style="background-color: transparent">
+        
+
+<a href="https:&#x2F;&#x2F;impft-hessen.de&#x2F;">
+    <div class="logo">
+        <img src="https:&#x2F;&#x2F;impft-hessen.de&#x2F;Hessen.svg" alt="logo">
+        ImpftHessen!
+    </div>
+</a>
+
+<nav>
+    
+    <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;impft-hessen.de&#x2F;karte&#x2F;">Karte</a>
+    
+    <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;impft-hessen.de&#x2F;mitmachen&#x2F;">Mitmachen</a>
+    
+    <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;impft-hessen.de&#x2F;ueber-uns&#x2F;">Über uns</a>
+    
+    
+        
+        <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;github.com&#x2F;xiphoseer&#x2F;impft-hessen">Github</a>
+        
+    
+</nav>
+
+    </header>
+
+    <div class="hero">
+        
+<section class="text-center">
+    <h1 class="heading-text" style="font-size: 50px">
+        Wir wollen Impfangebote sichtbar machen!
+    </h1>
+    <h3 class="title-text">
+        <b>ImpftHessen</b> ist eine Projekt von Freiwilligen, alle Impfangebote in Hessen
+        zu sammeln und einfach auffindbar zu machen.
+    </h3>
+</section>
+<img class="hero-image" style="width: 50%" src="https:&#x2F;&#x2F;impft-hessen.de&#x2F;Hessen.svg">
+
+<div class="explore-more text" onclick="document.getElementById('übersicht').scrollIntoView({behavior: 'smooth'})">
+    Wie funktioniert das? ⇩
+</div>
+<style>
+    .hero section {
+        padding: 0 5rem;
+    }
+
+    @media screen and (max-width: 768px) {
+        .hero section {
+            padding: 0 2rem;
+        }
+
+        .hero-image {
+            display: none
+        }
+    }
+</style>
+
+    </div>
+
+    
+
+    <main>
+        
+        
+        
+        
+        
+        <div class="toc">
+            <div class="toc-sticky">
+                
+                <div class="toc-item">
+                    <a class="subtext" href="https://impft-hessen.de/#das-problem">Das Problem</a>
+                </div>
+                
+                
+                <div class="toc-item">
+                    <a class="subtext" href="https://impft-hessen.de/#die-idee">Die Idee</a>
+                </div>
+                
+                
+                <div class="toc-item">
+                    <a class="subtext" href="https://impft-hessen.de/#die-umsetzung">Die Umsetzung</a>
+                </div>
+                
+                
+            </div>
+        </div>
+        
+        
+
+        <div class="content text">
+            
+<div id="übersicht" class="heading-text">Übersicht</div>
+<h1 id="das-problem">Das Problem</h1>
+<p>In den nächsten Wochen und Monaten wird es bei den Hausärzten immer mehr verfügbare COVID-Impfdosen
+und -termine geben. Gleichzeitig gibt es noch die Impfzentren und auch die Betriebsärzte fangen
+langsam an.</p>
+<p>Dabei sind die Kriterien aber teilweise sehr verschieden. Es gibt unterschiedliche Fortschritte
+bei den Prioritätsstufen, manche Hausärzte impfen nur Patienten die schon mal bei Ihnen waren,
+manche haben zusätzliche Termine für einzelne Impfstoffe. Aber so genau weiß das auch niemand
+wirklich.</p>
+<p>Es könnte hilfreich sein, wenn alle impfenden Orte an ein gemeinsames Terminprogramm wie
+<a href="https://impfterminservice.hessen.de/">https://impfterminservice.hessen.de/</a> angebunden wären. Das ist aber leider nicht der Fall.
+Hausärzte haben eine ganz eigene Termin-E-Mail, -Telefonnummer, oder -App oder nutzen eine
+Terminbörse wie <a href="https://sofort-impfen.de">https://sofort-impfen.de</a>.</p>
+<p>Wenn alle Impfwillingen Personen gleichzeitig versuchen per Telefon oder E-Mail bei einem Hausarzt
+einen Termin zu bekommen, dann sind die Hausärzte schnell überlastet. Gleichzeitig können
+Ärzt*innen ihre Termine sinnvollerweise nur in einer Buchungs-App hinterlegen. Daher:</p>
+<h1 id="die-idee">Die Idee</h1>
+<p>Nach dem Vorbild von <a href="https://www.vaccinateca.com/about-us">VaccinateCA</a> wollen wir mit dieser
+Seite eine Datenbank aufbauen, die die Verfügbarkeit von Impfdosen und -terminen in Impfzentren,
+Betrieben, Universitäten und bei Hausärzten sammelt. Dabei soll der Mehraufwand für diese Stellen
+möglichst gering bleiben, damit die sich auf das Impfen konzentrieren können.</p>
+<p>Dabei geht es nicht um einzelne Termine, sondern allgemeine Regeln, Vorraussetzungen und ungefähre
+Verfügbarkeit. Hierfür kann eine Unterscheidung nach <code>In weniger als 24h</code>, <code>Noch diese Woche</code>,
+<code>Ab KW 22</code> oder <code>Ab Anfang Juni</code> schon ausreichen. Die eigentliche Terminvereinbarung findet dann
+über die bestehenden Systeme statt.</p>
+<h1 id="die-umsetzung">Die Umsetzung</h1>
+<p>Auf dieser Seite gibt es eine <a href="https://impft-hessen.de/karte/">Karte</a> mit allen Impforten, die wir schon abgefragt
+haben. Bisher sind das Haupsächlich die Impfzentren der Landkreise.</p>
+<p>Daher brauchen wir <em>deine</em> Hilfe! Besuche die Seite <a href="https://impft-hessen.de/mitmachen/">Mitmachen</a> und schau dir an, wie du
+uns beim Datensammeln unterstützen kannst!</p>
+
+
+        </div>
+
+        
+        
+    </main>
+
+    
+<footer>
+    <small class="subtext">
+        <a href="https://impft-hessen.de/ueber-uns">ImpftHessen!</a> © 2021
+    </small>
+</footer>
+
+</body>
+<script>
+    function highlightNav(heading) {
+        let pathname = location.pathname;
+        document.querySelectorAll(".toc a").forEach((item) => {
+            item.classList.remove("active");
+        });
+        document.querySelector(".toc a[href$='" + pathname + "#" + heading + "']").classList.add("active");
+    }
+
+    let currentHeading = "";
+    window.onscroll = function () {
+        let h = document.querySelectorAll("h1,h2,h3,h4,h5,h6");
+        let elementArr = [];
+
+        h.forEach(item => {
+            if (item.id !== "") {
+                elementArr[item.id] = item.getBoundingClientRect().top;
+            }
+        });
+        elementArr.sort();
+        for (let key in elementArr) {
+            if (!elementArr.hasOwnProperty(key)) {
+                continue;
+            }
+            if (elementArr[key] > 0 && elementArr[key] < 300) {
+                if (currentHeading !== key) {
+                    highlightNav(key);
+                    currentHeading = key;
+                }
+                break;
+            }
+        }
+    }
+</script>
+
+</html>

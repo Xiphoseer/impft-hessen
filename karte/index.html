@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Karte | ImpftHessen! </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <style>
+    :root {
+        /* Primary theme color */
+        --primary-color: lightblue;
+        /* Primary theme text color */
+        --primary-text-color: #543631;
+        /* Primary theme link color */
+        --primary-link-color: blue;
+        /* Secondary color: the background body color */
+        --secondary-color: #fcfaf6;
+        --secondary-text-color: #303030;
+        /* Highlight text color of table of content */
+        --toc-highlight-text-color: blue;
+    }
+</style>
+
+    <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/normalize.css">
+    <link rel="stylesheet" href="https:&#x2F;&#x2F;impft-hessen.de&#x2F;juice.css">
+    
+<script src="https://kit.fontawesome.com/1c766cf612.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.3/leaflet.js"></script>
+<script src="https://cdn.maptiler.com/mapbox-gl-js/v1.5.1/mapbox-gl.js"></script>
+<script src="https://cdn.maptiler.com/mapbox-gl-leaflet/latest/leaflet-mapbox-gl.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.3/leaflet.css" />
+<link rel="stylesheet" href="https://cdn.maptiler.com/mapbox-gl-js/v1.5.1/mapbox-gl.css" />
+<style>
+    /*#map {position: absolute; top: 0; right: 0; bottom: 0; left: 0;}*/
+    #map { height: 450px; }
+</style>
+
+</head>
+
+<body>
+    
+<header class="box-shadow">
+    
+
+<a href="https:&#x2F;&#x2F;impft-hessen.de&#x2F;">
+    <div class="logo">
+        <img src="https:&#x2F;&#x2F;impft-hessen.de&#x2F;Hessen.svg" alt="logo">
+        ImpftHessen!
+    </div>
+</a>
+
+<nav>
+    
+    <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;impft-hessen.de&#x2F;karte&#x2F;">Karte</a>
+    
+    <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;impft-hessen.de&#x2F;mitmachen&#x2F;">Mitmachen</a>
+    
+    <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;impft-hessen.de&#x2F;ueber-uns&#x2F;">Über uns</a>
+    
+    
+        
+        <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;github.com&#x2F;xiphoseer&#x2F;impft-hessen">Github</a>
+        
+    
+</nav>
+
+</header>
+
+
+    <main>
+        
+        
+        
+        
+        
+        <div class="toc">
+            <div class="toc-sticky">
+                
+                <div class="toc-item">
+                    <a class="subtext" href="https://impft-hessen.de/karte/#karte">Karte</a>
+                </div>
+                
+                
+                <div class="toc-item">
+                    <a class="subtext" href="https://impft-hessen.de/karte/#datenquellen">Datenquellen</a>
+                </div>
+                
+                
+                <div class="toc-item-child">
+                    <a class="subtext" href="https://impft-hessen.de/karte/#staatliche-impfzentren"><small>- Staatliche Impfzentren</small></a>
+                </div>
+                
+                
+                
+            </div>
+        </div>
+        
+        
+
+        <div class="content text">
+            
+<div class="heading-text"></div>
+<h1 id="karte">Karte</h1>
+<p>Auf dieser Karte werde die Standorte der Impfstellen angezeigt.</p>
+<div id="map"></div>
+<!--<p><a href="https://www.maptiler.com/copyright/" target="_blank">© MapTiler</a></p>-->
+<h1 id="datenquellen">Datenquellen</h1>
+<p>Um diese Karte zu generieren verwenden wir unter anderem die folgenden Datenquellen</p>
+<h2 id="staatliche-impfzentren">Staatliche Impfzentren</h2>
+<ul>
+<li>OSM – <a href="https://www.openstreetmap.org/copyright" target="_blank">© OpenStreetMap contributors</a></li>
+<li>Land Hessen: <a href="https://corona-impfung.hessen.de/f%C3%BCr-b%C3%BCrger/die-impfzentren">https://corona-impfung.hessen.de/für-bürger/die-impfzentren</a></li>
+</ul>
+<script>
+    var map = L.map('map').setView([50.540,9], 7);
+    var gl = L.mapboxGL({
+    attribution: "\u003ca href=\"https://www.maptiler.com/copyright/\" target=\"_blank\"\u003e\u0026copy; MapTiler\u003c/a\u003e \u003ca href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\"\u003e\u0026copy; OpenStreetMap contributors\u003c/a\u003e",
+    style: 'https://api.maptiler.com/maps/339b74e3-736a-4a41-94e3-bafcc9dcffb7/style.json?key=g4rPvq9AptKIXPP2JxyE'
+    }).addTo(map);
+
+    var request = new Request('/impfzentren.json');
+
+    const i_phone = "<i class=\"fas fa-phone\"></i>";
+    function phone_link(tel) {
+        return `<a href="tel:${tel.replaceAll(' ', '')}">${tel}</a>`;
+    }
+    function phone(tel) {
+        return i_phone + " " + phone_link(tel);
+    }
+    const i_globe = "<i class=\"fas fa-globe\"></i>";
+    function website(url) {
+        return `${i_globe} <a href=\"${url}\">${url}</a>`;
+    }
+    const i_envelope = '<i class="far fa-envelope"></i>';
+    function email(mail) {
+        return `${i_envelope} <a href=\"mailto:${mail}\">${mail}</a>`;
+    }
+    const iz_tel = phone("0611 505 92 888") + " oder " + phone_link("116 117");
+    const iz_url = website("http://impfterminservice.hessen.de/");
+    const registration = `<b>Anmeldung</b><br>${iz_url}<br>${iz_tel}`;
+
+    fetch(request)
+    .then(function(response) { return response.json(); })
+    .then(function(data) {
+        for (var i = 0; i < data.records.length; i++) {
+            let record = data.records[i].fields;
+            var marker = L.marker([record.lat, record.lon]).addTo(map);
+
+            let street = record['addr:street'];
+            let housenumber = record['addr:housenumber'];
+            let address1 = street ? (housenumber ? `${street} ${housenumber}` : street) : "<i>Genaue Adresse unbekannt</i>";
+            let list = [`<b>${record.name}</b>`, address1, record.city, "", registration];
+            if (record['tel'] || record['email']) {
+                list.push('');
+                list.push('<b>Kontakt</b>');
+                if (record['email']) list.push(email(record['email']));
+                if (record['tel']) {
+                    list.push(phone(record['tel']));
+                    if (record['tel:time']) list.push(record['tel:time']);
+                }
+            }
+            if (record['fallback:url']) {
+                list.push('');
+                list.push('<b>Vermittlung von Restimpstoffen</b>');
+                list.push(website(record['fallback:url']));
+            }
+            marker.bindPopup(list.join('<br>'));
+        }
+    });
+</script>
+
+
+        </div>
+
+        
+        
+    </main>
+
+    
+<footer>
+    <small class="subtext">
+        <a href="https://impft-hessen.de/ueber-uns">ImpftHessen!</a> © 2021
+    </small>
+</footer>
+
+</body>
+<script>
+    function highlightNav(heading) {
+        let pathname = location.pathname;
+        document.querySelectorAll(".toc a").forEach((item) => {
+            item.classList.remove("active");
+        });
+        document.querySelector(".toc a[href$='" + pathname + "#" + heading + "']").classList.add("active");
+    }
+
+    let currentHeading = "";
+    window.onscroll = function () {
+        let h = document.querySelectorAll("h1,h2,h3,h4,h5,h6");
+        let elementArr = [];
+
+        h.forEach(item => {
+            if (item.id !== "") {
+                elementArr[item.id] = item.getBoundingClientRect().top;
+            }
+        });
+        elementArr.sort();
+        for (let key in elementArr) {
+            if (!elementArr.hasOwnProperty(key)) {
+                continue;
+            }
+            if (elementArr[key] > 0 && elementArr[key] < 300) {
+                if (currentHeading !== key) {
+                    highlightNav(key);
+                    currentHeading = key;
+                }
+                break;
+            }
+        }
+    }
+</script>
+
+</html>

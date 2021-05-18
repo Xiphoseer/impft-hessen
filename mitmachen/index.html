@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Mitmachen | ImpftHessen! </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <style>
+    :root {
+        /* Primary theme color */
+        --primary-color: lightblue;
+        /* Primary theme text color */
+        --primary-text-color: #543631;
+        /* Primary theme link color */
+        --primary-link-color: blue;
+        /* Secondary color: the background body color */
+        --secondary-color: #fcfaf6;
+        --secondary-text-color: #303030;
+        /* Highlight text color of table of content */
+        --toc-highlight-text-color: blue;
+    }
+</style>
+
+    <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/normalize.css">
+    <link rel="stylesheet" href="https:&#x2F;&#x2F;impft-hessen.de&#x2F;juice.css">
+    
+    
+</head>
+
+<body>
+    
+<header class="box-shadow">
+    
+
+<a href="https:&#x2F;&#x2F;impft-hessen.de&#x2F;">
+    <div class="logo">
+        <img src="https:&#x2F;&#x2F;impft-hessen.de&#x2F;Hessen.svg" alt="logo">
+        ImpftHessen!
+    </div>
+</a>
+
+<nav>
+    
+    <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;impft-hessen.de&#x2F;karte&#x2F;">Karte</a>
+    
+    <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;impft-hessen.de&#x2F;mitmachen&#x2F;">Mitmachen</a>
+    
+    <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;impft-hessen.de&#x2F;ueber-uns&#x2F;">Über uns</a>
+    
+    
+        
+        <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;github.com&#x2F;xiphoseer&#x2F;impft-hessen">Github</a>
+        
+    
+</nav>
+
+</header>
+
+
+    <main>
+        
+        
+        
+        
+        
+        <div class="toc">
+            <div class="toc-sticky">
+                
+                <div class="toc-item">
+                    <a class="subtext" href="https://impft-hessen.de/mitmachen/#mitmachen">Mitmachen</a>
+                </div>
+                
+                
+                <div class="toc-item">
+                    <a class="subtext" href="https://impft-hessen.de/mitmachen/#die-fragen">Die Fragen</a>
+                </div>
+                
+                
+            </div>
+        </div>
+        
+        
+
+        <div class="content text">
+            
+<div class="heading-text"></div>
+<h1 id="mitmachen">Mitmachen</h1>
+<p>Hey 👋</p>
+<p>Freut mich, dass du helfen willst. Diese Seite soll dir einen Überblick geben,
+was alles zu tun ist, und wie du dich einbringen kannst.</p>
+<p>Grundsätzlich braucht es Unterstützung bei den folgenden drei Aufgaben:</p>
+<ol>
+<li>Anrufe tätigen (sehr wichtig)</li>
+<li>Das Web durchsuchen (hilfreich)</li>
+<li>Diese Seite betreiben (bei Bedarf)</li>
+</ol>
+<p>Wenn das etwas für dich ist, schreib uns eine E-Mail an <a href="mailto:mitmachen@impft-hessen.de">mitmachen@impft-hessen.de</a>.</p>
+<h1 id="die-fragen">Die Fragen</h1>
+<p>Wir wollen für möglichst viele Arztpraxen die folgenden Fragen beantworten. Diese
+werden dann in einem IT-System (momentan <a href="https://airtable.com">Airtable</a>) gesammelt
+und regelmäßig auf diese Seite überspielt.</p>
+<ul>
+<li>Wird in Ihrer Praxis gegen COVID-19 geimpft?</li>
+<li>Müssen die Patienten vorher schonmal bei Ihnen gewesen sein?</li>
+<li>Impfen sie nur die Prioritätsstufen 1/2/3?</li>
+<li>Wann ist bei Ihnen der nächste freie Termin der Stufe 1/2/3/alle?
+<ul>
+<li>&lt; 24 Stunde / +1 Tag / +2 Tage / +1 Woche / +2 Wochen / +1 Monat / +2 Monate / &gt;= 3 Monate</li>
+</ul>
+</li>
+<li>Wann ist bei Ihnen der nächste freie Termin für Alter U60/Ü60?</li>
+<li>Wie kann man sich anmelden?
+<ul>
+<li>Gibt es ein Online-Terminvereinbarungstool?</li>
+<li>Per Telefon?</li>
+<li>Per E-Mail?</li>
+</ul>
+</li>
+<li>Sonstige Bedingungen / Hinweise?</li>
+<li>Gibt es Sondertermine mit AZ oder JJ?
+<ul>
+<li>wann ungefähr ist der nächste freie Termin?</li>
+<li>für welche Altersgruppen?</li>
+<li>nur für Stammpatienten?</li>
+</ul>
+</li>
+<li>Woher kommen diese Daten
+<ul>
+<li>Telefonat, Webseite, Datum</li>
+</ul>
+</li>
+</ul>
+
+
+        </div>
+
+        
+        
+    </main>
+
+    
+<footer>
+    <small class="subtext">
+        <a href="https://impft-hessen.de/ueber-uns">ImpftHessen!</a> © 2021
+    </small>
+</footer>
+
+</body>
+<script>
+    function highlightNav(heading) {
+        let pathname = location.pathname;
+        document.querySelectorAll(".toc a").forEach((item) => {
+            item.classList.remove("active");
+        });
+        document.querySelector(".toc a[href$='" + pathname + "#" + heading + "']").classList.add("active");
+    }
+
+    let currentHeading = "";
+    window.onscroll = function () {
+        let h = document.querySelectorAll("h1,h2,h3,h4,h5,h6");
+        let elementArr = [];
+
+        h.forEach(item => {
+            if (item.id !== "") {
+                elementArr[item.id] = item.getBoundingClientRect().top;
+            }
+        });
+        elementArr.sort();
+        for (let key in elementArr) {
+            if (!elementArr.hasOwnProperty(key)) {
+                continue;
+            }
+            if (elementArr[key] > 0 && elementArr[key] < 300) {
+                if (currentHeading !== key) {
+                    highlightNav(key);
+                    currentHeading = key;
+                }
+                break;
+            }
+        }
+    }
+</script>
+
+</html>
