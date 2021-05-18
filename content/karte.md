@@ -68,6 +68,11 @@ Um diese Karte zu generieren verwenden wir unter anderem die folgenden Datenquel
                     if (record['tel:time']) list.push(record['tel:time']);
                 }
             }
+            if (record['fallback:url']) {
+                list.push('');
+                list.push('<b>Vermittlung von Restimpstoffen</b>');
+                list.push(website(record['fallback:url']));
+            }
             marker.bindPopup(list.join('<br>'));
         }
     });
